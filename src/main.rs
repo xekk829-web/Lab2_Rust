@@ -148,19 +148,15 @@ fn main() {
     let price2 = 1500.0;
     let price3 = 800.0;
 
-    let summary = if price1 > price2 {
-        if price1 > price3 {
+    let summary = if price1 > price2 && price1 > price3 {
             if price2 > price3 {
                 let difference = price1 - price3;
                 format!("Самый дорогой товар стоит {} руб. и на {} руб. дороже самого дешёвого", price1, difference)
-            } else if price2 > price1 {
-                let difference = price2 - price3;
-                format!("Самый дорогой товар стоит {} руб. и на {} руб. дороже самого дешёвого", price2, difference)
             } else {
                 let difference = price1 - price2;
                 format!("Самый дорогой товар стоит {} руб. и на {} руб. дороже самого дешёвого", price1, difference)
             }
-        } else if price2 > price3 {
+        } else if price2 > price3 && price2 > price1 {
             if price3 > price1 {
                 let difference = price2 - price1;
                 format!("Самый дорогой товар стоит {} руб. и на {} руб. дороже самого дешёвого", price2, difference)
@@ -168,7 +164,7 @@ fn main() {
                 let difference = price2 - price3;
                 format!("Самый дорогой товар стоит {} руб. и на {} руб. дороже самого дешёвого", price2, difference)
             }
-        } else if price3 > price2 {
+        } else if price3 > price2 && price3 > price1 {
             if price2 > price1 {
                 let difference = price3 - price1;
                 format!("Самый дорогой товар стоит {} руб. и на {} руб. дороже самого дешёвого", price3, difference)
